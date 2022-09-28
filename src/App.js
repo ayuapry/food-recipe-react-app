@@ -1,16 +1,18 @@
 import React from "react";
 import { Navbar } from "./components/Navbar";
-import { Hero } from "./components/Hero";
+import { Header } from "./components/Header";
 import { HeadlineCards } from "./components/HeadlineCards";
-import { Food } from "./components/Food";
+import { Content } from "./components/Content";
+import { Category } from "./components/Category";
 
 function App() {
   return (
     <div>
       <Navbar />
-      <Hero />
+      <Header />
       <HeadlineCards />
-      <Food />
+      <Content />
+      <Category />
     </div>
   );
 }

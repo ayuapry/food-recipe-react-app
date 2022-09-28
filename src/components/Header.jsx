@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const Hero = () => {
+export const Header = () => {
   return (
     <div className='max-w-[1640px] mx-auto p-4'>
         <div className='max-h-[500px] relative '>
