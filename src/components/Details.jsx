@@ -18,7 +18,6 @@ export const Details = () => {
     useEffect(() => {
         getData();
     }, []);
-    console.log(foods);
 
   return (
     <div>
@@ -34,7 +33,7 @@ export const Details = () => {
                             <p>{item.strInstructions}</p>
                         </li>
                         <ul>
-                            <li>Ingredients:</li>
+                            <li>Ingredients</li>
                             <li>{item.strIngredient1}</li>
                             <li>{item.strIngredient2}</li>
                             <li>{item.strIngredient3}</li>

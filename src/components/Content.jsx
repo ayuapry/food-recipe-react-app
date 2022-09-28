@@ -1,11 +1,19 @@
 import axios from 'axios'
 import React, { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom';
+import { Search } from './Search'
 
 export const Content = () => {
 const [foods, setFoods] = useState([]);
 const navigate = useNavigate();
-//filter type
+const [search, setSearch] = useState('')
+
+let food = JSON.parse(JSON.stringify(foods))
+if (search) {
+  food = foods.filter(meal => meal.strMeal.toLowerCase().includes(search.toLowerCase()))
+}
+
+
 const getData = async () => {
     try{
         const item = await axios.get("https://www.themealdb.com/api/json/v1/1/search.php?f=b")
@@ -15,6 +23,7 @@ const getData = async () => {
     }
 };
 
+//filter type
 const filterType = async (category) => {
     try {
       const item = await axios.get("https://www.themealdb.com/api/json/v1/1/filter.php?c=" + category);
@@ -23,6 +32,11 @@ const filterType = async (category) => {
       console.log(error);
     }
 };
+
+const onChange = (event) => {
+    let input = event.target.value
+    setSearch(input)
+}
 
 useEffect(() => {
     getData();
@@ -51,13 +65,20 @@ useEffect(() => {
                     </button>
                 </div>
             </div>
+              
+        {/* Search Bar */}
+        <div>
+            <div className='flex justify-between max-w-[390px] w-full'>
+                <Search onChange={onChange} />
+            </div></div>
         </div>
+        
         {/* display foods */}
         <div className='grid grid-cols-2 lg:grid-cols-4 gap-6 pt-4 '>
-            {foods && foods.map((item, index) => (
+            {food && food.map((item, index) => (
                 <div key={index} className='border shadow-lg rounded-lg hover:scale-105 duration-300'>
                     <img src={item.strMealThumb} alt={item.strMeal} 
-                    className='w-full h-[200px] object-cover rounded-t-lg ' onClick={() => navigate(`/${item.idMeal}`)} />
+                    className='w-full h-[200px] object-cover rounded-t-lg ' onClick={() => navigate(`/details/${item.idMeal}`)} />
                     <div className='flex justify-between px-2 py-4 '>
                         <p className='font-bold'>{item.strMeal}</p>
                     </div>
