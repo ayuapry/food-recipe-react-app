@@ -1,8 +1,10 @@
 import axios from 'axios'
 import React, { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom';
 
 export const Content = () => {
-const [foods, setFoods] = useState([])
+const [foods, setFoods] = useState([]);
+const navigate = useNavigate();
 //filter type
 const getData = async () => {
     try{
@@ -52,10 +54,10 @@ useEffect(() => {
         </div>
         {/* display foods */}
         <div className='grid grid-cols-2 lg:grid-cols-4 gap-6 pt-4 '>
-            {foods.map((item, index) => (
+            {foods && foods.map((item, index) => (
                 <div key={index} className='border shadow-lg rounded-lg hover:scale-105 duration-300'>
                     <img src={item.strMealThumb} alt={item.strMeal} 
-                    className='w-full h-[200px] object-cover rounded-t-lg ' />
+                    className='w-full h-[200px] object-cover rounded-t-lg ' onClick={() => navigate(`/${item.idMeal}`)} />
                     <div className='flex justify-between px-2 py-4 '>
                         <p className='font-bold'>{item.strMeal}</p>
                     </div>
