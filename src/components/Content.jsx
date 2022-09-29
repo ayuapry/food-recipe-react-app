@@ -16,7 +16,7 @@ if (search) {
 
 const getData = async () => {
     try{
-        const item = await axios.get("https://www.themealdb.com/api/json/v1/1/search.php?f=b")
+        const item = await axios.get("https://www.themealdb.com/api/json/v1/1/search.php/filter?f=b")
         setFoods(item.data.meals);
     }catch (error) {
         console.log(error);
