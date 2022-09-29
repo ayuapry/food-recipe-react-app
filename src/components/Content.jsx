@@ -76,9 +76,9 @@ useEffect(() => {
         {/* display foods */}
         <div className='grid grid-cols-2 lg:grid-cols-4 gap-6 pt-4 '>
             {food && food.map((item, index) => (
-                <div key={index} className='border shadow-lg rounded-lg hover:scale-105 duration-300'>
+                <div key={index} className='border shadow-lg rounded-lg hover:scale-105 duration-300 cursor-pointer' onClick={() => navigate(`/details/${item.idMeal}`)}>
                     <img src={item.strMealThumb} alt={item.strMeal} 
-                    className='w-full h-[200px] object-cover rounded-t-lg ' onClick={() => navigate(`/details/${item.idMeal}`)} />
+                    className='w-full h-[200px] object-cover rounded-t-lg '  />
                     <div className='flex justify-between px-2 py-4 '>
                         <p className='font-bold'>{item.strMeal}</p>
                     </div>

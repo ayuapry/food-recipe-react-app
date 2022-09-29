@@ -3,7 +3,7 @@ import {BsFillCartFill} from 'react-icons/bs'
 
 export const Navbar = () => {
   return (
-    <div className='max-w-[1640px] mx-auto flex justify-between items-center p-1'>
+    <div className='fixed w-full h-[80px] mx-auto flex justify-between items-center p-1 bg-orange-500 z-10'>
 
       {/* Left side */}
       <div className='flex items-center'>
