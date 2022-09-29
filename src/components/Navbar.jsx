@@ -5,7 +5,6 @@ import {BsFillCartFill} from 'react-icons/bs'
 export const Navbar = () => {
   return (
     <div className='fixed w-full h-[80px] mx-auto flex justify-between items-center p-1 bg-orange-500 z-10'>
-
       {/* Left side */}
       <div className='flex items-center'>
         <Link to="/" className='text-2xl sm:text-3xl lg:text-4xl px-2'>
@@ -16,12 +15,10 @@ export const Navbar = () => {
           <p className='p-2'>Pickup</p>
         </div>
       </div>
-
       {/* card button */}
       <button className='bg-black text-white hidden md:flex items-center py-1 rounded-full m-3'>
         <BsFillCartFill size={20} className='mr-2' />Cart
       </button>
-
 </div>
   )
 }

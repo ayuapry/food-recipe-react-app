@@ -64,8 +64,7 @@ useEffect(() => {
                         Chicken
                     </button>
                 </div>
-            </div>
-              
+            </div>           
         {/* Search Bar */}
         <div>
             <div className='flex justify-between max-w-[390px] w-full'>

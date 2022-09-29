@@ -10,4 +10,4 @@ export const Search = ({onChange}) => {
       </div>
     </div>
   )
-}
+};

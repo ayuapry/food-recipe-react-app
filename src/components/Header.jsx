@@ -2,6 +2,7 @@ import React from 'react'
 
 export const Header = () => {
   return (
+    
     <div className='max-w-[1640px] mx-auto p-5 pt-6'>
         <div className='max-h-[500px] relative mt-20'>
         {/* overlay */}

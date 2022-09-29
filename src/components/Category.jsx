@@ -13,7 +13,6 @@ export const Category = () => {
                 <img src={item.image} alt={item.name} className='w-20' />
                 </div>
             ))}
-
         </div>
     </div>
   )
